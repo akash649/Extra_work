@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #uname {
+            border: unset;
+            border-bottom: 2px solid black;
+            margin-bottom: 2rem;
+            margin-top: 5rem;
+            margin-left: 5rem;
+        }
+
+        label {
+            position: relative;
+            top: 0;
+            left: -10rem;
+            transition: top 0.3s ease; /* Add transition for smooth animation */
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <input id="uname" type="text">
+        <label for="uname">Enter user name</label><br>
+        <label for="pass">Enter Password</label>
+        <input type="password">
+
+        <script>
+            const input = document.getElementById('uname');
+            const label = document.querySelector('label[for="uname"]');
+
+            input.addEventListener('focus', function() {
+                label.style.top = '-1.5rem';
+            });
+
+            input.addEventListener('blur', function() {
+                if (!input.value) {
+                    label.style.top = '0';
+                }
+            });
+        </script>
+    </form>
+</body>
+</html>
